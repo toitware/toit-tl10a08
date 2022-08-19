@@ -1,1 +1,5 @@
-# Toit Lock File.
+prefixes:
+  tl19a08: ..
+packages:
+  ..:
+    path: ..

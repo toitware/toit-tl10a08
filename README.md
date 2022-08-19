@@ -1,84 +1,29 @@
-# MyPackage
+# TL19A08
 
-A template repository for creating a Toit package.
+Driver for the TL19A08 8-channel TTL output module.
 
-## Toit package
-Use `toit.pkg describe` or `toit pkg describe` (depending on which Toit
-variant you use) to see how https://pkg.toit.io will extract package
-information from your repo when you publish the package.
+The TL19A08 is a module that allows to control 8 digital outputs. It is
+manufactured by [eletechsup](https://www.ebay.com/str/eletechsupsofficialstore).
 
-Either add a `name: ...` entry to the package.yaml or change the title
-(first line) of this README to the package name.
+## Description
+The TL19A08 exists in two variants, differing in their input voltage. The 5V
+variant takes 5V as input on VIN, the 12V version takes 6-24V as input.
 
-Either add a `description: ...` entry to the package.yaml or ensure
-that the first paragraph of this README can be used as a description.
+The `Vo` pin of the 5V version is 5V, the `Vo` pin of the 12V version is 12V.
 
-## Structure
-Code that should be used by other developers must live in the `src` folder.
+The V12 version can be recognized by the presence of a voltage regulator (in proximity of
+the 8th output channel). The 5V version has this solder pad unpopulated.
 
-Examples should live in `examples`. For bigger examples, or examples that
-use more packages, create a subfolder.
+The working current of the module is 8-13mA.
 
-Tests live in the `tests` folder.
+The module can be controlled through a Modbus interface, or with AT commands. By
+default the module is configured to use the Modbus interface. For the AT commands one
+has to bridge the 0 pins on the mode-selection pads (next to the PWR LED).
 
-## Copyright
-Don't forget to update the copyright holder in the license files.
-There are (up to) three license files:
-- `LICENSE`: usually MIT
-- `examples/EXAMPLES_LICENSE`: usually BSD0
-- `tests/TESTS_LICENSE`: usually BSD0
+The level of the output port is low by default. It can be switched by bridging the
+1 pins on the mode-selection pads.
 
-We recommend to use the following Copyright header in `src` files (with your
-copyright):
+The left-most mode selection pins (marked as M2) are unused.
 
-```
-// Copyright (C) 2022 Jane/John Doe
-// Use of this source code is governed by an MIT-style license that can be
-// found in the package's LICENSE file.
-```
-
-Similarly, you can use the following header for tests and examples:
-```
-// Copyright (C) 2022 Jane/John Doe
-// Use of this source code is governed by a Zero-Clause BSD license that can
-// be found in the tests/TESTS_LICENSE file.
-```
-and
-```
-// Copyright (C) 2022 Jane/John Doe
-// Use of this source code is governed by a Zero-Clause BSD license that can
-// be found in the examples/EXAMPLES_LICENSE file.
-```
-
-## Local package
-Examples and tests can have different dependencies than the package. This is,
-why they have their own package.yaml/package.lock.
-
-Open the examples (resp. tests) folder with a separate instance of your IDE.
-For vscode you could just write `code examples`.
-
-Install this package as a local package.
-```
-cd examples
-toit.pkg install --local --name=YOUR_PACKAGE_NAME ..
-```
-
-This installs the package located at ".." (here the root of the repository) with
-your package name.
-
-Consequently examples and tests can import the package as if it was installed
-from the Internet. This way, tests and examples use the same syntax as
-users of the package.
-
-## Publish
-Make sure to run `toit.pkg describe` to verify that the data is correct.
-
-This repository comes with a `.github/workflows/publish.xml` file which automatically
-publishes the Toit package for every release. You can just draft a new release on
-Github.
-It is important that the release has a semver tag (like `v1.2.3`).
-
-Alternatively, a package can be published by hand:
-0. Ensure that everything looks good (`toit.pkg describe`).
-1. Add a semver tag (like `v1.0.0`).
-2. Go to https://pkg.toit.io/publish and submit your package.
+## Standard configuration
+The R46CA01's UART is configured for 9600, N, 8, 1. The speed can be configured via software.
