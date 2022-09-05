@@ -11,7 +11,7 @@ variant takes 5V as input on VIN, the 12V version takes 6-24V as input.
 
 The `Vo` pin of the 5V version is 5V, the `Vo` pin of the 12V version is 12V.
 
-The V12 version can be recognized by the presence of a voltage regulator (in proximity of
+The 12V version can be recognized by the presence of a voltage regulator (in proximity of
 the 8th output channel). The 5V version has this solder pad unpopulated.
 
 The working current of the module is 8-13mA.
