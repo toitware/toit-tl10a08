@@ -63,7 +63,6 @@ main:
       --baud_rate=tl19a08.Tl19a08.BAUD_RATE
   bus := modbus.Modbus.rtu rs485_bus --baud_rate=tl19a08.Tl19a08.BAUD_RATE
 
-
   // Assume that the module is the only one on the bus.
   channels := tl19a08.Tl19a08.detect bus
 
