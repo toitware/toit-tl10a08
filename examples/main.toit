@@ -3,7 +3,7 @@
 // be found in the EXAMPLES_LICENSE file.
 
 /**
-Demonstrates the use of the driver using a common uart-rs485 transceiver, such as the
+Demonstrates the use of the driver using a common UART-RS485 transceiver, such as the
   SP3485, used in the BOB-10124 transceiver breakout board.
 */
 
