@@ -16,14 +16,18 @@ the 8th output channel). The 5V version has this solder pad unpopulated.
 
 The working current of the module is 8-13mA.
 
-The module can be controlled through a Modbus interface, or with AT commands. By
-default the module is configured to use the Modbus interface. For the AT commands one
+The module can be controlled through a RS232 TTL interface. Physically, the
+TL19A08 does *not* feature any RS-485 interface.
+
+Depending on the mode selection, the module uses either a Modbus protocol (default), or
+AT commands. For the AT commands one
 has to bridge the 0 pins on the mode-selection pads (next to the PWR LED).
 
-The level of the output port is low by default. It can be switched by bridging the
+The level of the output port is low by default. This means that the pins are high when
+closed (default) and low when open. The level can be switched by bridging the
 1 pins on the mode-selection pads.
 
 The left-most mode selection pins (marked as M2) are unused.
 
 ## Standard configuration
-The R46CA01's UART is configured for 9600, N, 8, 1. The speed can be configured via software.
+The R46CA01's UART is configured for 9600, N, 8, 1.

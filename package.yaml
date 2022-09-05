@@ -1,2 +1,9 @@
 name: tl19a08
 description: Driver for the TL19A08 8-channel TTL output module.
+dependencies:
+  modbus:
+    url: github.com/toitlang/pkg-modbus
+    version: ^2.0.1
+  rs485:
+    url: github.com/toitware/toit-rs485
+    version: ^1.0.1

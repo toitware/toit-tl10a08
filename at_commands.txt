@@ -1,0 +1,22 @@
+For reference, the following are the AT commands:
+
+Read status:
+  AT+Rx  where 'x' equal to the channel ID (1..8).
+
+Open:
+  AT+Ox  where 'x' equal to the channel ID (1..8).
+
+Close:
+  AT+Cx  where 'x' equal to the channel ID (1..8).
+
+Toggle:
+  AT+Tx  where 'x' equal to the channel ID (1..8).
+
+Single:
+  AT+Lx  where 'x' equal to the channel ID (1..8).
+
+Momentary (delay of 1s):
+  AT+Mx  where 'x' equal to the channel ID (1..8).
+
+Delay:
+  AT+Dx=yyyy  where 'x' equal to the channel ID (1..8), and yyyy is the delay in seconds.
