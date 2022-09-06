@@ -61,7 +61,7 @@ main:
       --rx=gpio.Pin RX
       --tx=gpio.Pin TX
       --baud_rate=tl19a08.Tl19a08.BAUD_RATE
-  bus := modbus.Modbus.rtu rs485_bus --baud_rate=tl19a08.Tl19a08.BAUD_RATE
+  bus := modbus.Modbus.rtu rs485_bus
 
   // Assume that the module is the only one on the bus.
   channels := tl19a08.Tl19a08.detect bus
